@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<title>Simple Sign up from</title>
+
+<head>
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <style>
+
+   
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    #einkaufliste, #list {
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 0px solid #ccc;
+      margin-bottom: 0px;
+    }
+  @media screen and (max-width: 480px) {
+    #einkaufliste, #list {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+   /*  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+    #list, #einkaufliste {
+      width: 50%;
+      border: 0px solid #ccc;
+      padding: 20px;
+      margin: 10px;
+    } */
+    @media (max-width: 600px) {
+      #list, #einkaufliste {
+        width: 90%;
+      }
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: #333;
+      background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    }
+
+    h2 {
+      border: 0;
+      height: 1px;
+      text-align: center;
+    }
+
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4286f4;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grab;
+      width: 48%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+  <script src="myScript.js">
+  </script>
+  <div id="einkaufliste">
+      <h2>Einkaufliste<br></h2>
+  </div>
+
+  <hr>
+  <div id="list">
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="text" id="inputItem" placeholder="Enter item"/>
+    <button onclick="addItem()">Add Item</button>
+    <ul id="list">
+  </div>
+  </ul>
+</body>
+
+</html>
