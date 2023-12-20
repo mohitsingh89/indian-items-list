@@ -1,12 +1,13 @@
 // Load items
 window.onload = async function () {
     const items = await getListApi();
-    console.log(JSON.stringify(items, null, 2));
+    console.log(`ALL ITEMS : ${JSON.stringify(items, null, 2)}`);
     const activeItems = items
        .filter(item => item && item.active === 'true')
         .map(item => item.name);
+    console.log(`ALL ACTIVE ITEMS : ${JSON.stringify(items, null, 2)}`);
     activeItems.forEach(function (item) {
-        addItemToList(item);
+        await addItemToList(item);
     });
 };
 
@@ -20,7 +21,7 @@ async function addItem() {
 }
 
 // Add item to the list element
-function addItemToList(item) {
+async function addItemToList(item) {
     const list = document.getElementById('list');
     const listItem = document.createElement('li');
     listItem.innerHTML = '<input type="checkbox"  onchange="removeItem(\'' + item + '\')"><label style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; width: 200px;">' + item + '</label><br><br><br>';
@@ -66,6 +67,6 @@ async function removeFromListApi(item) {
             method: 'DELETE'
         });
     } catch (error) {
-        console.error('Error while saving item to database', error);
+        console.error('Error while deleting from the database', error);
     }
 }
