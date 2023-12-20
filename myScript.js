@@ -38,7 +38,10 @@ async function removeItem(item) {
 
 async function getListApi() {
     try {
-        let response = await fetch('https://the-list-app-nkh89hix.fermyon.app/list/item/3',{mode: 'no-cors'});
+        let response = await fetch('https://the-list-app-nkh89hix.fermyon.app/list/item/3',
+                                   {mode: 'no-cors',
+                                     headers: {'Content-Type': 'application/json'},
+                                                                                           });
         return await response.json();
     } catch (error) {
         console.error('Error:', error);
