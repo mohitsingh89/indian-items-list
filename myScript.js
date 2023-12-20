@@ -44,7 +44,7 @@ async function getListApi() {
                                                                                            });
         return await response.json();
     } catch (error) {
-        console.error('Error:', error);
+       console.error(`Error: ${error}`);
     }
 }
 
