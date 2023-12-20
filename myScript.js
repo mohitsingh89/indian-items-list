@@ -7,7 +7,7 @@ window.onload = async function () {
         .map(item => item.name);
     console.log(`ALL ACTIVE ITEMS : ${JSON.stringify(items, null, 2)}`);
     activeItems.forEach(function (item) {
-        await addItemToList(item);
+         addItemToList(item);
     });
 };
 
@@ -21,7 +21,7 @@ async function addItem() {
 }
 
 // Add item to the list element
-async function addItemToList(item) {
+function addItemToList(item) {
     const list = document.getElementById('list');
     const listItem = document.createElement('li');
     listItem.innerHTML = '<input type="checkbox"  onchange="removeItem(\'' + item + '\')"><label style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; width: 200px;">' + item + '</label><br><br><br>';
