@@ -2,7 +2,7 @@
 window.onload = async function () {
     const items = await getListApi();
     const activeItems = items
-     //   .filter(item => item.active === 'true')
+       .filter(item => item && item.active === 'true')
         .map(item => item.name);
     activeItems.forEach(function (item) {
         addItemToList(item);
