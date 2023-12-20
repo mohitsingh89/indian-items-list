@@ -39,7 +39,6 @@ async function removeItem(item) {
 async function getListApi() {
     try {
         let response = await fetch('https://the-list-app-nkh89hix.fermyon.app/list/item/3',
-                                   {mode: 'no-cors',
                                      headers: {'Content-Type': 'application/json'},
                                                                                            });
         return await response.json();
@@ -53,8 +52,7 @@ async function saveToListApi(item) {
         const response = await fetch('https://the-list-app-nkh89hix.fermyon.app/list/item', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({"listId": 3, "name": item, "deName": "", "active": "true"}),
-            mode: 'no-cors',
+            body: JSON.stringify({"listId": 3, "name": item, "deName": "", "active": "true"})
         });
         console.log("STATUS :" + response.status)
     } catch (error) {
