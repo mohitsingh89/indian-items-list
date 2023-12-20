@@ -1,7 +1,7 @@
-
 // Load items
 window.onload = async function () {
-    const items = await getListApi()
+    const items = await getListApi();
+    const activeItems = items
         .filter(item => item.active === 'true')
         .map(item => item.name);
     items.forEach(function (item) {
@@ -47,10 +47,11 @@ async function getListApi() {
 async function saveToListApi(item) {
     try {
         const response = await fetch('https://the-list-app-nkh89hix.fermyon.app/list/item', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({"listId": 3, "name": item, "deName": "", "active": "true"})
-            });
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({"listId": 3, "name": item, "deName": "", "active": "true"}),
+            mode: 'no-cors',
+        });
         console.log("STATUS :" + response.status)
     } catch (error) {
         console.error('Error while saving item to database', error);
@@ -59,9 +60,9 @@ async function saveToListApi(item) {
 
 async function removeFromListApi(item) {
     try {
-     await fetch(`https://the-list-app-nkh89hix.fermyon.app/list/item/${item}`, {
-                method: 'DELETE'
-            });
+        await fetch(`https://the-list-app-nkh89hix.fermyon.app/list/item/${item}`, {
+            method: 'DELETE'
+        });
     } catch (error) {
         console.error('Error while saving item to database', error);
     }
