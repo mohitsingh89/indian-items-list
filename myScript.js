@@ -4,7 +4,7 @@ window.onload = async function () {
     const activeItems = items
         .filter(item => item.active === 'true')
         .map(item => item.name);
-    items.forEach(function (item) {
+    activeItems.forEach(function (item) {
         addItemToList(item);
     });
 };
@@ -37,7 +37,7 @@ async function removeItem(item) {
 
 async function getListApi() {
     try {
-        let response = await fetch('https://the-list-app-nkh89hix.fermyon.app/list/item/3');
+        let response = await fetch('https://the-list-app-nkh89hix.fermyon.app/list/item/3',{mode: 'no-cors'});
         return await response.json();
     } catch (error) {
         console.error('Error:', error);
