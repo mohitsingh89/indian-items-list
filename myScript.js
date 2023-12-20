@@ -1,6 +1,7 @@
 // Load items
 window.onload = async function () {
     const items = await getListApi();
+    console.log(JSON.stringify(items, null, 2));
     const activeItems = items
        .filter(item => item && item.active === 'true')
         .map(item => item.name);
