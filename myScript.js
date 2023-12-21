@@ -37,6 +37,7 @@ async function saveItem(item) {
 // Remove item from the list and local storage
 async function removeItem(item) {
     await removeFromListApi(item);
+     location.reload();
 }
 
 async function getListApi() {
