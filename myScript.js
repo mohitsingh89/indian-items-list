@@ -15,6 +15,7 @@ window.onload = async function () {
 async function addItem() {
     var item = document.getElementById('inputItem').value;
     if (item) {
+        await saveItem(item);
         await addItemToList(item);
     }
     document.getElementById('inputItem').value = '';
@@ -22,7 +23,7 @@ async function addItem() {
 
 // Add item to the list element
 async function addItemToList(item) {
-    await saveItem(item);
+ //   await saveItem(item);
     const list = document.getElementById('list');
     const listItem = document.createElement('li');
     listItem.innerHTML = '<input type="checkbox"  onchange="removeItem(\'' + item + '\')"><label style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; width: 200px;">' + item + '</label><br><br><br>';
