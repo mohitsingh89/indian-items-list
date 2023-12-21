@@ -1,11 +1,11 @@
 // Load items
 window.onload = async function () {
     const items = await getListApi();
-    console.log(`ALL ITEMS : ${JSON.stringify(items, null, 2)}`);
+    //console.log(`ALL ITEMS : ${JSON.stringify(items, null, 2)}`);
     const activeItems = items
        .filter(item => item && item.active === 'true')
         .map(item => item.name);
-    console.log(`ALL ACTIVE ITEMS : ${JSON.stringify(items, null, 2)}`);
+    console.log(`ALL ACTIVE ITEMS : ${JSON.stringify(activeItems, null, 2)}`);
     activeItems.forEach(function (item) {
          addItemToList(item);
     });
